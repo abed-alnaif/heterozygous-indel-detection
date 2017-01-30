@@ -13,12 +13,6 @@ insertion/deletion (indel), in which case all positions beyond the
 location of the indel will exhibit mixed peaks, making it very difficult
 to subtract the reference sequence by manual examination.
 
-In cases where the subtracted sequence is ambiguous, IUPAC conventions
-are used to indicate the level of ambiguity.
-
-The program uses basepairs 61-80 to align the two sequences. Thus, the 
-two sequences should be at least ~100 basepairs long.
-
 USAGE
 =====
 
@@ -44,6 +38,12 @@ sequence, and then it prints the sample sequence after the reference
 sequence has been subtracted from it. To detect the presence of indels,
 one can simply align this output to the reference sequence (using tools
 such as BLAST).
+
+In cases where the subtracted sequence is ambiguous, IUPAC conventions
+are used to indicate the level of ambiguity.
+
+The program uses basepairs 61-80 to align the two sequences. Thus, the 
+two sequences should be at least ~100 basepairs long.
 
 Two example .fcs files are provided:
 

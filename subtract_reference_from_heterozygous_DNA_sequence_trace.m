@@ -13,6 +13,19 @@ function subtract_reference_from_heterozygous_DNA_sequence_trace()
 % location of the indel will exhibit mixed peaks, making it very difficult
 % to subtract the reference sequence by manual examination.
 %
+%
+% USAGE
+%
+% To use this function, first convert sequence files from to .fcs. If they
+% are currently .ab1 and the user is using OS X, they can use the following
+% instructions (modified from this website:
+% https://www.biostars.org/p/622/):
+% 1. Open terminal
+% 2. cd to progs
+% 3. Run convert_trace command; for example:
+% ./convert_trace -out_format scf < salr_EagI_PCR_rev-PAA-04.ab1 > salr_EagI_PCR_rev-PAA-04.fcs
+% 4. move output file from progs directory to desired directory
+%
 % This function doesn't have any input or output arguments. Simply type the
 % reference and sample filenames (with the full path, if the files are in a
 % different directory as this source code) below in the first lines, and 
@@ -29,17 +42,7 @@ function subtract_reference_from_heterozygous_DNA_sequence_trace()
 % The program uses basepairs 61-80 to align the two sequences. Thus, the 
 % two sequences should be at least ~100 basepairs long.
 %
-% To use this function, first convert sequence files from to .fcs. If they
-% are currently .ab1 and the user is using OS X, they can use the following
-% instructions (modified from this website:
-% https://www.biostars.org/p/622/):
-% 1. Open terminal
-% 2. cd to /Users/abedalnaif/Documents/program_for_converting_DNA_sequence_files/io_lib-1.12.2/progs
-% 3. Run convert_trace command; for example:
-% ./convert_trace -out_format scf < /Users/abedalnaif/Documents/research/sequences/carla\ sequencing\ for\ crispr\ project\ oct\ 2014/10-279093025_ab1/salr_EagI_PCR_rev-PAA-04.ab1 > salr_EagI_PCR_rev-PAA-04.fcs
-% 4. move output file from progs directory to desired directory
 %
-% 
 % IMPLEMENTATION
 %
 % First, the two sequences are aligned using basepairs 61-80 of the sample
